@@ -1,108 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Index</title>
+        <link rel="stylesheet" href="./assests/scss/format.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Blinker:200,300,400|Cousine&display=swap"
+            rel="stylesheet"
+        />
+        <script defer src="./assests/js/app.js"></script>
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Index</title>
-    <link rel="stylesheet" href="./assests/scss/format.css" />
-    <link href="https://fonts.googleapis.com/css?family=Blinker:200,300,400|Cousine&display=swap" rel="stylesheet" />
-    <script defer src="./assests/js/app.js"></script>
-</head>
-
-<body>
-    <div class="main__container padding-b-100">
-        <h1 class="margin-b-40 margin-t-40">Sass <em>cheatsheet</em></h1>
-        <div class="cards__container grid grid__full">
-            <div class="card">
-                <div class="card__head">
-                    <div class="card__title">
-                        <h3>B.E.M</h3>
+    <body>
+        <div class="main__container padding-b-100">
+            <h1 class="margin-b-40 margin-t-40">Sass <em>cheatsheet</em></h1>
+            <div class="cards__container grid grid__full">
+                <div class="card">
+                    <div class="card__head">
+                        <div class="card__title">
+                            <h3>B.E.M</h3>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__row">
+                            Block Element Modifier - Class Naming convention
+                        </div>
+                        <div class="card__row">
+                            Block: .card__container<br />Element: .card__title<br />Modifier:
+                            .card__button .card__butotn--active
+                        </div>
                     </div>
                 </div>
-                <div class="card__body">
-                    <div class="card__row">
-                        Block Element Modifier - Class Naming convention
+            </div>
+            <div class="cards__container grid grid__full">
+                <div class="card">
+                    <div class="card__head">
+                        <div class="card__title">
+                            <h3>Tachyons css</h3>
+                        </div>
                     </div>
-                    <div class="card__row">
-                        Block: .card__container<br />Element: .card__title<br />Modifier:
-                        .card__button .card__butotn--active
+                    <div class="card__body">
+                        <div class="card__row">Using independent classes in html elemnts</div>
+                        <div class="card__row">h1 class="margin-b-40 margin-t-40"</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards__container grid grid__split">
+                <div class="card">
+                    <div class="card__head">
+                        <div class="card__title">
+                            <h3>Variables</h3>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__row">$red: #833;</div>
+                        <div class="card__row">body { $red; }</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__head">
+                        <div class="card__title">
+                            <h3>Extend</h3>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__row">.button { ··· }</div>
+                        <div class="card__row">.push-button { @extend .button; }</div>
+                        <div class="card__row--notes">Grouping properties</div>
+                        <div class="card__row">
+                            %title { margin-top: 8px; margin-bottom: 16px; white-space: nowrap;
+                            overflow: hidden; color: $color-primar; }
+                        </div>
+                        <div class="card__row">h1 { @extend %title; }</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards__container grid grid__full">
+                <div class="card">
+                    <div class="card__head">
+                        <div class="card__title">
+                            <h3>Mixins</h3>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__row">
+                            @mixin heading-font { font-family: sans-serif; font-weight: bold; }
+                        </div>
+                        <div class="card__row">h1 { @include heading-font; }</div>
+                        <div class="card__row--notes">with parameters</div>
+                        <div class="card__row">@mixin font-size($n) { font-size: $n * 1.2em; }</div>
+                        <div class="card__row">body { @include font-size(2); }</div>
+                        <div class="card__row--notes">with default values</div>
+                        <div class="card__row">@mixin pad($n: 10px) { padding: $n; }</div>
+                        <div class="card__row">body { @include pad(15px); }</div>
+                        <div class="card__row--notes">with a default variable</div>
+                        <div class="card__row">$default-padding: 10px;</div>
+                        <div class="card__row">
+                            @mixin pad($n: $default-padding) { padding: $n; }
+                        </div>
+                        <div class="card__row">body { @include pad(15px); }</div>
+                        <div class="card__row--notes">for media</div>
+                        <div class="card__row">
+                            @mixin maxMedia($width) { @media(max-width:#{$width}) { @content; } }
+                        </div>
+                        <div class="card__row">
+                            @include maxMedia(1280px) {.main-menu li { padding: 0 20px; } }
+                        </div>
+                        <div class="card__row">
+                            logo { @include maxMedia(1430px) { max-width: 250px; }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="margin-b-40 margin-t-40">Javascript <em>cheatsheet</em></h1>
+            <div class="cards__container grid grid__full">
+                <div class="card">
+                    <div class="card__head">
+                        <div class="card__title">
+                            <h3>Arrays</h3>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__row--notes">methods</div>
+                        <div class="card__row">unsift();</div>
+                        <div class="card__row">adds elements at the begginging of an array</div>
+                        <div class="card__row--notes"></div>
+                        <div class="card__row">push();</div>
+                        <div class="card__row">adds elements at the end of an array</div>
+                        <div class="card__row--notes"></div>
+                        <div class="card__row">shift();</div>
+                        <div class="card__row">
+                            removes an element from the beginning of an array
+                        </div>
+                        <div class="card__row--notes"></div>
+                        <div class="card__row">pop();</div>
+                        <div class="card__row">
+                            removes an element from the end of an array
+                        </div>
+                        <div class="card__row--notes"></div>
+                        <div class="card__row">splice();</div>
+                        <div class="card__row">returns new modified array</div>
+                        <div class="card__row">splice(indexOfArray, numOfElementsToRmove);</div>
+                        <div class="card__row">
+                            let array = ['today', 'was', 'not', 'so', 'great'];
+                        </div>
+                        <div class="card__row">array.splice(2, 2);</div>
+                        <div class="card__row">// ['today', 'was', 'great']</div>
+                        <div class="card__row">removed elements can be stored to a variable:</div>
+                        <div class="card__row">
+                            let newArray = array.splice(3, 2); // ['really', 'happy']
+                        </div>
+                        <div class="card__row">adding elements</div>
+                        <div class="card__row">
+                            splice(indexOfArray, numOfElementsToRmove, addElementInPlaceOfRemoved);
+                        </div>
+                        <div class="card__row">const numbers = [10, 11, 12, 12, 15];</div>
+                        <div class="card__row">
+                            numbers.splice(3, 1, 13, 14); // returns [ 10, 11, 12, 13, 14, 15 ]
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="cards__container grid grid__full">
-            <div class="card">
-                <div class="card__head">
-                    <div class="card__title">
-                        <h3>Tachyons css</h3>
-                    </div>
-                </div>
-                <div class="card__body">
-                    <div class="card__row">Using independent classes in html elemnts</div>
-                    <div class="card__row">h1 class="margin-b-40 margin-t-40"</div>
-                </div>
-            </div>
-        </div>
-        <div class="cards__container grid grid__split">
-            <div class="card">
-                <div class="card__head">
-                    <div class="card__title">
-                        <h3>Variables</h3>
-                    </div>
-                </div>
-                <div class="card__body">
-                    <div class="card__row">$red: #833;</div>
-                    <div class="card__row">body { $red; }</div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card__head">
-                    <div class="card__title">
-                        <h3>Extend</h3>
-                    </div>
-                </div>
-                <div class="card__body">
-                    <div class="card__row">.button { ··· }</div>
-                    <div class="card__row">.push-button { @extend .button; }</div>
-                    <div class="card__row--notes">Grouping properties</div>
-                    <div class="card__row">
-                        %title { margin-top: 8px; margin-bottom: 16px; white-space: nowrap;
-                        overflow: hidden; color: $color-primar; }
-                    </div>
-                    <div class="card__row">h1 { @extend %title; }</div>
-                </div>
-            </div>
-        </div>
-        <div class="cards__container grid grid__full">
-            <div class="card">
-                <div class="card__head">
-                    <div class="card__title">
-                        <h3>Mixins</h3>
-                    </div>
-                </div>
-                <div class="card__body">
-                    <div class="card__row"> @mixin heading-font { font-family: sans-serif; font-weight: bold; } </div>
-                    <div class="card__row">h1 { @include heading-font; }</div>
-                    <div class="card__row--notes">with parameters</div>
-                    <div class="card__row"> @mixin font-size($n) { font-size: $n * 1.2em; } </div>
-                    <div class="card__row"> body { @include font-size(2); } </div>
-                    <div class="card__row--notes">with default values</div>
-                    <div class="card__row"> @mixin pad($n: 10px) { padding: $n; } </div>
-                    <div class="card__row"> body { @include pad(15px); } </div>
-                    <div class="card__row--notes">with a default variable</div>
-                    <div class="card__row">$default-padding: 10px;</div>
-                    <div class="card__row">@mixin pad($n: $default-padding) { padding: $n; }</div>
-                    <div class="card__row">body { @include pad(15px); }</div>
-                    <div class="card__row--notes">for media</div>
-                    <div class="card__row">@mixin maxMedia($width) { @media(max-width:#{$width}) { @content; } }</div>
-                    <div class="card__row">@include maxMedia(1280px) {.main-menu li { padding: 0 20px; } }</div>
-                    <div class="card__row"> logo { @include maxMedia(1430px) { max-width: 250px; }</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
+    </body>
 </html>
