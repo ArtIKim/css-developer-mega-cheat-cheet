@@ -6,10 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Index</title>
         <link rel="stylesheet" href="./assests/scss/format.css" />
-        <link
-            href="https://fonts.googleapis.com/css?family=Blinker:200,300,400|Cousine&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css?family=Blinker:200,300,400|Cousine&display=swap" rel="stylesheet" />
         <script defer src="./assests/js/app.js"></script>
     </head>
 
@@ -27,10 +24,7 @@
                         <div class="card__row">
                             Block Element Modifier - Class Naming convention
                         </div>
-                        <div class="card__row">
-                            Block: .card__container<br />Element: .card__title<br />Modifier:
-                            .card__button .card__butotn--active
-                        </div>
+                        <div class="card__row">Block: .card__container<br />Element: .card__title<br />Modifier: .card__button .card__butotn--active</div>
                     </div>
                 </div>
             </div>
@@ -70,8 +64,7 @@
                         <div class="card__row">.push-button { @extend .button; }</div>
                         <div class="card__row--notes">Grouping properties</div>
                         <div class="card__row">
-                            %title { margin-top: 8px; margin-bottom: 16px; white-space: nowrap;
-                            overflow: hidden; color: $color-primar; }
+                            %title { margin-top: 8px; margin-bottom: 16px; white-space: nowrap; overflow: hidden; color: $color-primar; }
                         </div>
                         <div class="card__row">h1 { @extend %title; }</div>
                     </div>
@@ -160,6 +153,79 @@
                         <div class="card__row">
                             numbers.splice(3, 1, 13, 14); // returns [ 10, 11, 12, 13, 14, 15 ]
                         </div>
+                        <div class="card__row--notes"></div>
+                        <div class="card__row">slice();</div>
+                        <div class="card__row">returns new array with aextracted elements</div>
+                        <div class="card__row">slice(indexOfExtraction, endOfExtraction(-1));</div>
+                        <div class="card__row">
+                            let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+                        </div>
+                        <div class="card__row">
+                            let todaysWeather = weatherConditions.slice(1, 3); // todaysWeather equals ['snow', 'sleet'];
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="margin-b-40 margin-t-40">Command Lines <em>cheatsheet</em></h1>
+            <div class="cards__container grid grid__full">
+                <div class="card">
+                    <div class="card__head">
+                        <div class="card__title">
+                            <h3>Windows</h3>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__row--notes">listing directory</div>
+                        <div class="card__row">dir</div>
+                        <div class="card__row--notes">change directory</div>
+                        <div class="card__row">cd 'Directory'</div>
+                        <div class="card__row--notes">move to parent directory</div>
+                        <div class="card__row">cd ..</div>
+                        <div class="card__row--notes">clear command</div>
+                        <div class="card__row">cls</div>
+                        <div class="card__row--notes">make directory</div>
+                        <div class="card__row">mkdir</div>
+                        <div class="card__row--notes">create new file</div>
+                        <div class="card__row">copy NUL 'test.js'</div>
+                        <div class="card__row--notes">copying file to parent directory</div>
+                        <div class="card__row">copy 'test.js' ..</div>
+                        <div class="card__row--notes">moving file to parent directory</div>
+                        <div class="card__row">move 'test.js' ..</div>
+                        <div class="card__row--notes">deleting file from directory (deletes file from hard drive)</div>
+                        <div class="card__row">del 'test.js'</div>
+                        <div class="card__row--notes">deleting folder from directory (deletes folder from hard drive)</div>
+                        <div class="card__row">rmdir /S 'test'</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards__container grid grid__full">
+                <div class="card">
+                    <div class="card__head">
+                        <div class="card__title">
+                            <h3>Mac</h3>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__row--notes">listing directory</div>
+                        <div class="card__row">ls</div>
+                        <div class="card__row--notes">change directory</div>
+                        <div class="card__row">cd 'Directory'</div>
+                        <div class="card__row--notes">move to parent directory</div>
+                        <div class="card__row">cd ..</div>
+                        <div class="card__row--notes">clear command</div>
+                        <div class="card__row">clear</div>
+                        <div class="card__row--notes">make directory</div>
+                        <div class="card__row">mkdir</div>
+                        <div class="card__row--notes">create new file</div>
+                        <div class="card__row">touch 'test.js'</div>
+                        <div class="card__row--notes">copying file to parent directory</div>
+                        <div class="card__row">cp 'test.js' ..</div>
+                        <div class="card__row--notes">moving file to parent directory</div>
+                        <div class="card__row">mv 'test.js' ..</div>
+                        <div class="card__row--notes">deleting file from directory (deletes file from hard drive)</div>
+                        <div class="card__row">rm 'test.js'</div>
+                        <div class="card__row--notes">deleting folder from directory (deletes folder from hard drive)</div>
+                        <div class="card__row">rm -r 'test' (will recursivle delete all files in directory and then the derictory itself)</div>
                     </div>
                 </div>
             </div>
