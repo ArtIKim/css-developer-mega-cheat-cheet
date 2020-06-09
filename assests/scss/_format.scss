@@ -1,3 +1,4 @@
+/*Reset*/
 * {
     margin: 0;
     padding: 0;
@@ -53,6 +54,12 @@ h3 {
 h1 {
     @extend %title-main;
 
+    position: sticky;
+    top: 0;
+    background-color: #f1f3f5;
+    padding: 22px 0;
+    z-index: 99;
+
     em {
         @extend %title-main;
         font-style: normal;
@@ -60,6 +67,49 @@ h1 {
     }
 }
 
+a:active {
+    color: unset !important;
+}
+
+/*Menu Marker*/
+.header {
+    &__container {
+        padding: 20px 15px;
+        max-width: 57%;
+        margin: 0 auto;
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+
+            a {
+                position: relative;
+
+                &.active {
+                    color: rgba(51, 68, 85, 0.5);
+                    transition: all 300ms ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.menu {
+    &__marker {
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        height: 2px;
+        width: 0;
+        background-color: #000;
+        border-radius: 4px;
+        transition: all 300ms ease-in-out;
+    }
+}
+
+/*Class Modifiers*/
 .margin {
     &-b {
         &-40 {
@@ -82,6 +132,7 @@ h1 {
     }
 }
 
+/*DOM Stracture*/
 .main {
     &__container {
         max-width: 1200px;

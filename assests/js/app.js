@@ -1,22 +1,53 @@
-function findElement(arr, func) {
-    let num = 0;
-    arr.forEach(function(num) {
-        return num % 2 === 0;
-    });
-}
+// tabs is an array of titles of each site open within the window
+var Window = function (tabs) {
+    this.tabs = tabs; // We keep a record of the array inside the object
+};
 
-console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+// When you join two windows into one window
+Window.prototype.join = function (otherWindow) {
+    this.tabs = this.tabs.concat(otherWindow.tabs);
+    return this;
+};
 
-// findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }) should return 8.
+// When you open a new tab at the end
+Window.prototype.tabOpen = function (tab) {
+    this.tabs.push("new tab"); // Let's open a new tab for now
+    return this;
+};
 
-const array = ["asdf", "frd", "gre"];
+// When you close a tab
+Window.prototype.tabClose = function (index) {
+    // Only change code below this line
 
-const data = array.reduce((obj, item) => {
-    if (!obj[item]) {
-        obj[item] = 0;
-    }
-    obj[item]++;
-    return obj;
-}, {});
+    var tabsBeforeIndex = this.tabs.splice(0, index); // Get the tabs before the tab
+    var tabsAfterIndex = this.tabs.splice(index - 1); // Get the tabs after the tab
 
-console.log(data);
+    this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // Join them together
+
+    // Only change code above this line
+
+    return this;
+};
+
+// Let's create three browser windows
+var workWindow = new Window(["GMail", "Inbox", "Work mail", "Docs", "freeCodeCamp"]); // Your mailbox, drive, and other work sites
+var socialWindow = new Window(["FB", "Gitter", "Reddit", "Twitter", "Medium"]); // Social sites
+var videoWindow = new Window(["Netflix", "YouTube", "Vimeo", "Vine"]); // Entertainment sites
+
+// Now perform the tab opening, closing, and other operations
+var finalTabs = socialWindow
+    .tabOpen() // Open a new tab for cat memes
+    .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
+    .join(workWindow.tabClose(1).tabOpen());
+console.log(finalTabs.tabs);
+
+const arr = ["Netflix", "YouTube", "Vimeo", "Vine"];
+const el1 = arr.splice(0, 2);
+console.log(el1);
+console.log(arr);
+
+const el2 = arr.splice(2);
+console.log(el2);
+console.log(arr);
+
+console.log(el1.concat(el2));

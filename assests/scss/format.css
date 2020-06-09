@@ -1,3 +1,4 @@
+/*Reset*/
 * {
   margin: 0;
   padding: 0;
@@ -47,11 +48,65 @@ h3::after {
           transform: translateY(-50%);
 }
 
+h1 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #f1f3f5;
+  padding: 22px 0;
+  z-index: 99;
+}
+
 h1 em {
   font-style: normal;
   color: rgba(51, 68, 85, 0.1);
 }
 
+a:active {
+  color: unset !important;
+}
+
+/*Menu Marker*/
+.header__container {
+  padding: 20px 15px;
+  max-width: 57%;
+  margin: 0 auto;
+}
+
+.header__container ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.header__container ul a {
+  position: relative;
+}
+
+.header__container ul a.active {
+  color: rgba(51, 68, 85, 0.5);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.menu__marker {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 2px;
+  width: 0;
+  background-color: #000;
+  border-radius: 4px;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+/*Class Modifiers*/
 .margin-b-40 {
   margin-bottom: 40px;
 }
@@ -64,6 +119,7 @@ h1 em {
   padding-bottom: 100px !important;
 }
 
+/*DOM Stracture*/
 .main__container {
   max-width: 1200px;
   margin: 0 auto;
